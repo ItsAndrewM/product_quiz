@@ -21,7 +21,6 @@ export const getStaticProps = async ({ params }) => {
   const nextQuestion = breadcrumbs.at(index + 1) ?? null;
   const previousQuestion =
     index !== 0 ? breadcrumbs.at(index - 1) : { name: "home", slug: "/" };
-  console.log(previousQuestion);
   return {
     props: {
       path: params.question || null,
@@ -85,8 +84,6 @@ const Page = ({ path, question, nextQuestion, previousQuestion }) => {
       });
     }
   };
-
-  console.log(router.query);
   return (
     <Layout>
       <div className={styles.wrapper}>

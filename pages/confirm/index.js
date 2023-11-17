@@ -5,7 +5,6 @@ import questionStyles from "@/styles/question.module.css";
 import Link from "next/link";
 import styles from "@/styles/confirm.module.css";
 export const getServerSideProps = async (context) => {
-  console.log(questions);
   return {
     props: {
       data: context.query || null,
