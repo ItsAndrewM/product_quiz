@@ -30,7 +30,12 @@ const Page = ({ data, questions, breadcrumbs }) => {
               return (
                 <li key={index}>
                   {/* {breadcrumbs.at(index).description}:{" "} */}
-                  {breadcrumbs.at(index).name}:{" "}
+                  {/* {breadcrumbs.at(index).name}:{" "} */}
+                  {
+                    breadcrumbs.find((breadcrumb) => breadcrumb.key === val)
+                      .name
+                  }
+                  :{" "}
                   {/* {data[val] === "true" ? "An outboard motor" : data[val]} */}
                   {data[val]}
                 </li>
