@@ -26,6 +26,7 @@ const Page = ({ data, questions, breadcrumbs }) => {
           <ul>
             {Object.keys(data).map((val, index) => {
               console.log(`${breadcrumbs.at(index).name}: ${data[val]}`);
+              console.log(data);
               return (
                 <li key={index}>
                   {/* {breadcrumbs.at(index).description}:{" "} */}
