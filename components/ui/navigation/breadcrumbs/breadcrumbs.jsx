@@ -12,7 +12,6 @@ const Breadcrumbs = () => {
     delete query.question;
     setUrlQuery(query);
     const index = breadcrumbs.findIndex((index) => {
-      console.log(index);
       return router.asPath.split("?")[0].includes(index.slug);
     });
     if (router.asPath.split("?")[0].includes("/confirm")) {
