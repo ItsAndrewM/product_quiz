@@ -1,0 +1,43 @@
+.input {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  max-height: 100px;
+  max-width: 200px;
+  position: absolute;
+  /* height: 1px;
+  width: 1px; */
+  opacity: 0;
+  border: 1px solid black;
+}
+
+.label {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: capitalize;
+  cursor: pointer;
+  text-align: center;
+  border: 1px solid white;
+  transition: all 0.3s;
+  border: 2px solid var(--cream);
+}
+
+.label:has(input:checked) {
+  border: 2px solid var(--casBlue);
+  backdrop-filter: blur(16px);
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.label:hover {
+  border: 2px solid var(--casBlue);
+}
+
+.listItem {
+  width: 200px !important;
+  max-width: 200px;
+  height: 100px;
+  max-height: 100px;
+}

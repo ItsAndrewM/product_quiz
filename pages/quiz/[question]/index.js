@@ -1,9 +1,12 @@
+import AnswerInput from "@/components/blocks/answers/answerInput/answerInput";
 import Layout from "@/components/ui/layout/layout";
 import { breadcrumbs } from "@/data/breadcrumbs/breadcrumbs";
 import { questions } from "@/data/questions/questions";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import breadCrumbStyles from "@/components/ui/navigation/breadcrumbs/breadcrumbs.module.css";
+import styles from "@/styles/question.module.css";
 
 export const getStaticPaths = async () => {
   return {
@@ -32,7 +35,7 @@ export const getStaticProps = async ({ params }) => {
 const Page = ({ path, question, nextQuestion, previousQuestion }) => {
   const [state, setState] = useState();
   const router = useRouter();
-  console.log(previousQuestion);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const isValid = e.target.checkValidity();
@@ -48,78 +51,92 @@ const Page = ({ path, question, nextQuestion, previousQuestion }) => {
     if (isValid) {
       // here you do what you need to do if is valid
       let data = Array.from(formData.keys()).reduce((acc, key) => {
-        acc[key] = formData.get(key);
+        if (path === "purpose") {
+          const useCase = Array.from(formData.values());
+          acc[key] = useCase;
+        } else {
+          acc[key] = formData.get(key);
+        }
         return acc;
       }, {});
       const query = router.query;
       delete query.question;
-
       data = { ...query, ...data };
       if (data) {
         router.push({
           pathname: !nextQuestion ? "/confirm" : `/quiz/${nextQuestion.slug}`,
           query: data,
         });
+        form.reset();
       }
-      //   try {
-      //     const response = await fetch("/api/contact-us", {
-      //       method: "post",
-      //       body: new URLSearchParams(data),
-      //     });
-      //     if (!response.ok) {
-      //       throw new Error(`Invalid response: ${response.status}`);
-      //     }
-      //     alert("Thanks for contacting us, we will get back to you soon!");
-      //   } catch (err) {
-      //     console.error(err);
-      //     alert("We can't submit the form, try again later?");
-      //   }
     } else {
       setErrors(validationMessages);
     }
   };
 
+  const handlePreviousButton = (e) => {
+    e.preventDefault();
+    const query = router.query;
+    delete query.question;
+    if (query) {
+      router.push({
+        pathname: `/quiz/${previousQuestion.slug}`,
+        query: query,
+      });
+    }
+  };
+
+  console.log(router.query);
   return (
     <Layout>
-      <div>{path}</div>
-      <div>{question.title}</div>
-      <div>
-        <form onSubmit={handleSubmit}>
-          <ul>
-            {question.questions.map((val, index) => {
-              return (
-                <li key={index}>
-                  <input
+      <div className={styles.wrapper}>
+        <div className={styles.titleWrapper}>
+          <h1>{path}</h1>
+          <p>{question.title}</p>
+        </div>
+        <div>
+          <form onSubmit={handleSubmit} className={styles.form}>
+            <ul className={styles.list}>
+              {question.questions.map((val, index) => {
+                return (
+                  <AnswerInput
+                    key={index}
+                    name={val.name}
+                    title={val.title}
+                    type={question.type}
                     value={val.value}
-                    type="radio"
-                    name={val.title}
-                    placeholder={val.name}
-                    required
+                    defaultChecked={index === 0 ? true : false}
                   />
-                  <label>{val.name}</label>
-                </li>
-              );
-            })}
-          </ul>
-          <input type="submit" />
-        </form>
+                );
+              })}
+            </ul>
+            <div className={styles.box}>
+              {previousQuestion.name === "home" ? (
+                <div className={styles.buttonBox}>
+                  <span
+                    className={`${breadCrumbStyles.chevron} ${breadCrumbStyles.left}`}
+                  ></span>
+                  <Link href={`${previousQuestion.slug}`}>home</Link>
+                </div>
+              ) : (
+                <div>
+                  <Link
+                    href={`/quiz/${previousQuestion.slug}`}
+                    onClick={handlePreviousButton}
+                  >
+                    back
+                  </Link>
+                </div>
+              )}
+              <input
+                type="submit"
+                value={"Next Question"}
+                className={styles.submit}
+              />
+            </div>
+          </form>
+        </div>
       </div>
-      {!nextQuestion ? (
-        <></>
-      ) : (
-        <div>
-          <Link href={`/quiz/${nextQuestion.slug}`}>{nextQuestion.name}</Link>
-        </div>
-      )}
-      {previousQuestion.name === "home" ? (
-        <div>
-          <Link href={`${previousQuestion.slug}`}>home</Link>
-        </div>
-      ) : (
-        <div>
-          <Link href={`/quiz/${previousQuestion.slug}`}>back</Link>
-        </div>
-      )}
     </Layout>
   );
 };

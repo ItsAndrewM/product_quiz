@@ -1,0 +1,90 @@
+.list {
+  max-width: var(--max-width);
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(25%, auto));
+  justify-content: space-between;
+  justify-items: center;
+  align-content: center;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.submit {
+  cursor: pointer;
+  text-transform: capitalize;
+  color: white;
+  width: 300px;
+  max-width: 300px;
+  height: 50px;
+  max-height: 50px;
+  outline: none;
+  font-weight: bold;
+  /* background-color: var(--accent-primary-color); */
+  background: inherit;
+  backdrop-filter: blur(9px);
+  border: none;
+  box-shadow: inset 0 0 0 0 var(--casBlue);
+  background-color: var(--casOrange);
+  transition: color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+
+.submit:hover {
+  box-shadow: inset 300px 0 0 0 var(--casBlue);
+}
+
+.box {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.buttonWrapper {
+  width: 100%;
+}
+
+.buttonBox {
+  font-weight: bold;
+  text-transform: capitalize;
+  transition: all 0.3s;
+}
+
+.buttonBox:hover {
+  color: var(--casBlue);
+}
+
+.titleWrapper {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.titleWrapper > h1,
+.titleWrapper > p {
+  width: 100%;
+
+  text-align: center;
+}
+
+.titleWrapper > h1 {
+  text-transform: capitalize;
+}
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.form {
+  width: 100%;
+  max-width: var(--max-width);
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}

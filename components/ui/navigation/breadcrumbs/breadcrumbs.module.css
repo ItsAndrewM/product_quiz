@@ -3,4 +3,64 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.list {
+  padding: 0 2em;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.listItem {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-transform: capitalize;
+}
+
+.listItem > a {
+  transition: all 0.3s;
+}
+
+.listItem > a:hover {
+  color: var(--casOrange);
+}
+
+.active {
+  color: var(--casOrange);
+  font-weight: bold;
+}
+
+.chevron {
+  display: inline-block;
+  margin-right: 0.7rem;
+  position: relative;
+  top: 0.4rem;
+}
+
+.chevron::before {
+  border-style: solid;
+  border-width: 0.1em 0.1em 0 0;
+  content: "";
+  display: inline-block;
+  height: 0.45em;
+  position: relative;
+  top: 0.3em;
+  width: 0.45em;
+  transition: transform 0.2s ease-out;
+}
+
+.right {
+  top: -5px;
+  left: 5px;
+  transform: rotate(45deg);
+}
+
+.left {
+  left: 0.25em;
+  transform: rotate(-135deg);
 }
