@@ -27,7 +27,7 @@ const Page = ({ data, questions, breadcrumbs }) => {
           <ul>
             {Object.keys(data).map((val, index) => {
               return (
-                <li>
+                <li key={index}>
                   {/* {breadcrumbs.at(index).description}:{" "} */}
                   {breadcrumbs.at(index).name}:{" "}
                   {/* {data[val] === "true" ? "An outboard motor" : data[val]} */}
