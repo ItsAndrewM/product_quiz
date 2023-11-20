@@ -91,7 +91,7 @@ const Page = ({ path, question, nextQuestion, previousQuestion }) => {
           <h1>{path}</h1>
           <p>{question.title}</p>
         </div>
-        <div>
+        <div className={styles.formWrapper}>
           <form onSubmit={handleSubmit} className={styles.form}>
             <ul className={styles.list}>
               {question.questions.map((val, index) => {

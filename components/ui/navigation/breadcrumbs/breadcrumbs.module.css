@@ -10,7 +10,9 @@
 }
 
 .progress,
-.progress::-moz-progress-bar {
+.progress::-moz-progress-bar,
+.progress::-webkit-progress-bar {
+  min-width: var(--max-width);
   width: 100%;
   height: 20px;
   background-color: var(--casOrange);
@@ -87,8 +89,17 @@
     padding: 0em 1em;
   }
   .list {
+    position: relative;
     max-width: 100%;
+    width: 1000px;
     overflow-x: scroll;
+    padding: 0;
+    gap: 1em;
+  }
+  .listItem {
+    min-width: 95px;
+    max-width: 95px;
+    gap: 1em;
   }
   .progress,
   .progress::-moz-progress-bar {
