@@ -1,10 +1,10 @@
 import Link from "next/link";
 import styles from "./breadcrumbs.module.css";
-import { breadcrumbs } from "@/data/breadcrumbs/breadcrumbs";
+// import { breadcrumbs } from "@/data/breadcrumbs/breadcrumbs";
 import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
 import BreadcrumbItem from "../breadcrumbItem/breadcrumbItem";
-const Breadcrumbs = () => {
+const Breadcrumbs = ({ breadcrumbs }) => {
   const router = useRouter();
   const ref = useRef();
   const [urlQuery, setUrlQuery] = useState(router.query);
@@ -15,7 +15,7 @@ const Breadcrumbs = () => {
     delete query.question;
     setUrlQuery(query);
     const index = breadcrumbs.findIndex((index) => {
-      return router.asPath.split("?")[0].includes(index.slug);
+      return router.asPath.split("?")[0].includes(index.breadcrumb);
     });
     console.log(index);
     if (router.asPath.split("?")[0].includes("/confirm")) {

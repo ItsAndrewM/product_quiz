@@ -1,37 +1,59 @@
 import AnswerInput from "@/components/blocks/answers/answerInput/answerInput";
 import Layout from "@/components/ui/layout/layout";
 import { breadcrumbs } from "@/data/breadcrumbs/breadcrumbs";
-import { questions } from "@/data/questions/questions";
+import { questions } from "@/data/questions/dinghys";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import breadCrumbStyles from "@/components/ui/navigation/breadcrumbs/breadcrumbs.module.css";
 import styles from "@/styles/question.module.css";
+import Breadcrumbs from "@/components/ui/navigation/breadcrumbs/breadcrumbs";
+import {
+  getCurrentQuestionData,
+  getNextQuestionData,
+  getPreviousQuestionData,
+  getQuestionData,
+  getQuestionPaths,
+} from "@/lib/questions";
 
 export const getStaticPaths = async () => {
+  const paths = await getQuestionPaths();
+
   return {
-    paths: breadcrumbs.map((path) => `/quiz/${path.slug}`) ?? [],
+    paths: paths.map((path) => `/quiz${path}`) ?? [],
     fallback: "blocking",
   };
 };
 
 export const getStaticProps = async ({ params }) => {
-  const index = breadcrumbs.findIndex((item) => item.slug === params.question);
-  const data = questions.at(index);
-  const nextQuestion = breadcrumbs.at(index + 1) ?? null;
-  const previousQuestion =
-    index !== 0 ? breadcrumbs.at(index - 1) : { name: "home", slug: "/" };
+  const allQuestionData = await getQuestionData(params.category);
+  const data = await getCurrentQuestionData(params.category, params.question);
+  const nextQuestion = await getNextQuestionData(
+    params.category,
+    params.question
+  );
+  const previousQuestion = await getPreviousQuestionData(
+    params.category,
+    params.question
+  );
   return {
     props: {
-      path: params.question || null,
       question: data || null,
+      path: params.question || null,
+      categoryPath: params.category || null,
       nextQuestion: nextQuestion || null,
       previousQuestion: previousQuestion || null,
     },
   };
 };
 
-const Page = ({ path, question, nextQuestion, previousQuestion }) => {
+const Page = ({
+  path,
+  question,
+  nextQuestion,
+  previousQuestion,
+  categoryPath,
+}) => {
   const [state, setState] = useState();
   const router = useRouter();
 
@@ -60,10 +82,13 @@ const Page = ({ path, question, nextQuestion, previousQuestion }) => {
       }, {});
       const query = router.query;
       delete query.question;
+      delete query.category;
       data = { ...query, ...data };
       if (data) {
         router.push({
-          pathname: !nextQuestion ? "/confirm" : `/quiz/${nextQuestion.slug}`,
+          pathname: !nextQuestion
+            ? "/confirm"
+            : `/quiz/${categoryPath}/${nextQuestion.breadcrumb}`,
           query: data,
         });
         form.reset();
@@ -87,6 +112,7 @@ const Page = ({ path, question, nextQuestion, previousQuestion }) => {
   return (
     <Layout>
       <div className={styles.wrapper}>
+        {/* <Breadcrumbs breadcrumbs={} */}
         <div className={styles.titleWrapper}>
           <h1>{path}</h1>
           <p>{question.title}</p>
@@ -94,18 +120,22 @@ const Page = ({ path, question, nextQuestion, previousQuestion }) => {
         <div className={styles.formWrapper}>
           <form onSubmit={handleSubmit} className={styles.form}>
             <ul className={styles.list}>
-              {question.questions.map((val, index) => {
-                return (
-                  <AnswerInput
-                    key={index}
-                    name={val.name}
-                    title={val.title}
-                    type={question.type}
-                    value={val.value}
-                    defaultChecked={index === 0 ? true : false}
-                  />
-                );
-              })}
+              {!question.questions ? (
+                <textarea />
+              ) : (
+                question.questions.map((val, index) => {
+                  return (
+                    <AnswerInput
+                      key={index}
+                      name={val.name}
+                      title={val.title}
+                      type={question.type}
+                      value={val.value}
+                      defaultChecked={index === 0 ? true : false}
+                    />
+                  );
+                })
+              )}
             </ul>
             <div className={styles.box}>
               {previousQuestion.name === "home" ? (

@@ -6,11 +6,13 @@ const BreadcrumbItem = ({ crumb, urlQuery }) => {
   const router = useRouter();
 
   return (
-    <li className={styles.listItem} key={crumb.slug}>
+    <li className={styles.listItem} key={crumb.breadcrumb}>
       <Link
-        href={{ pathname: `/quiz/${crumb.slug}`, query: urlQuery }}
+        href={{ pathname: `/quiz/${crumb.breadcrumb}`, query: urlQuery }}
         className={
-          router.asPath.includes(`/quiz/${crumb.slug}`) ? styles.active : ""
+          router.asPath.includes(`/quiz/${crumb.breadcrumb}`)
+            ? styles.active
+            : ""
         }
       >
         {crumb.name}

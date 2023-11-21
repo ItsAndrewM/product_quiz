@@ -1,0 +1,376 @@
+[
+  {
+    "title": "What kind of sailing do you do?",
+    "content": "Understanding what your plans are for your boat and the type of sailing you do is extremely important. Check all that apply",
+    "type": "checkbox",
+    "key": "useCase",
+    "index": 1,
+    "breadcrumb": "Sailing",
+    "questions": [
+      {
+        "name": "Coastal Cruising",
+        "value": "Coastal Cruising",
+        "title": "useCase"
+      },
+      {
+        "name": "Offshore Sailing",
+        "value": "Offshore Sailing",
+        "title": "useCase"
+      },
+      { "name": "Club Racing", "value": "Club Racing", "title": "useCase" },
+      { "name": "Day sailing", "value": "Day sailing", "title": "useCase" },
+      {
+        "name": "Bluewater cruising",
+        "value": "Bluewater cruising",
+        "title": "useCase"
+      },
+      {
+        "name": "Long Distance Racing",
+        "value": "Long Distance Racing",
+        "title": "useCase"
+      },
+      {
+        "name": "Long Distance Cruising",
+        "value": "Long Distance Cruising",
+        "title": "useCase"
+      },
+      {
+        "name": "Circumnavigation Cruising",
+        "value": "Circumnavigation Cruising",
+        "title": "useCase"
+      },
+      {
+        "name": "Expedition sailing",
+        "value": "Expedition sailing",
+        "title": "useCase"
+      },
+      { "name": "Lake Cruising", "value": "Lake Cruising", "title": "useCase" },
+      {
+        "name": "I’m not sure about what kind of sailing",
+        "value": "",
+        "title": "useCase"
+      }
+    ]
+  },
+  {
+    "title": "How long have you owned her?",
+    "content": "Provide us with insight regarding the level of experience and familiarity you have with your sailboat.",
+    "type": "radio",
+    "key": "ownershipLength",
+    "index": 2,
+    "breadcrumb": "Ownership",
+    "questions": [
+      {
+        "value": "Less than 1 year",
+        "name": "Less than 1 year",
+        "title": "ownershipLength"
+      },
+      { "value": "1 year", "name": "1 year", "title": "ownershipLength" },
+      { "value": "1-2 years", "name": "1-2 years", "title": "ownershipLength" },
+      { "value": "2-3 years", "name": "2-3 years", "title": "ownershipLength" },
+      { "value": "3-4 years", "name": "3-4 years", "title": "ownershipLength" },
+      { "value": "4+ years", "name": "4+ years", "title": "ownershipLength" },
+      {
+        "value": "",
+        "name": "I don’t own the boat yet",
+        "title": "ownershipLength"
+      }
+    ]
+  },
+  {
+    "title": "What make your sail boat unique?",
+    "content": "",
+    "type": "textarea",
+    "key": "unique",
+    "index": 3,
+    "breadcrumb": "Unique"
+  },
+  {
+    "title": "What Would You Do With New Sails?",
+    "content": "Tell us what you’re planning to do with the new sails, why are you looking for new sails to begin with?",
+    "type": "radio",
+    "key": "plans",
+    "index": 4,
+    "breadcrumb": "Plans",
+    "questions": [
+      {
+        "value": "Planning a trip",
+        "name": "Planning a trip",
+        "title": "plans"
+      },
+      {
+        "value": "circumnavigation",
+        "name": "circumnavigation",
+        "title": "plans"
+      },
+      {
+        "value": "performance boost",
+        "name": "performance boost",
+        "title": "plans"
+      },
+      {
+        "value": "Upgrade for comfort",
+        "name": "Upgrade for comfort",
+        "title": "plans"
+      },
+      {
+        "value": "Racing optimization",
+        "name": "Racing optimization",
+        "title": "plans"
+      },
+      {
+        "value": "Cruising versatility",
+        "name": "Cruising versatility",
+        "title": "plans"
+      },
+      { "value": "", "name": "I’m not sure", "title": "plans" }
+    ]
+  },
+  {
+    "title": "When do you need your new sails by?",
+    "content": "Tell us what kind of timeframe you’re working with.",
+    "type": "radio",
+    "key": "timeFrame",
+    "index": 5,
+    "breadcrumb": "Timeframe",
+    "questions": [
+      {
+        "name": "I’m interested in pricing",
+        "value": "I’m interested in pricing",
+        "title": "timeFrame"
+      },
+      {
+        "name": "I’m budgeting for a new boat",
+        "value": "I’m budgeting for a new boat",
+        "title": "timeFrame"
+      },
+      {
+        "name": "I will need new sails next season",
+        "value": "68 lbs",
+        "title": "timeFrame"
+      },
+      {
+        "name": "I will need new sails this season",
+        "value": "89 lbs",
+        "title": "timeFrame"
+      },
+      {
+        "name": "I will need new sails now",
+        "value": "111 lbs",
+        "title": "timeFrame"
+      },
+      { "name": "I have no timeframe", "value": "", "title": "timeFrame" }
+    ]
+  },
+  {
+    "title": "What kind of sail type are you looking for?",
+    "content": "Different sail types offer unique advantages and are suitable for various sailing conditions and preferences. Check all that apply.",
+    "type": "checkbox",
+    "key": "sailType",
+    "index": 6,
+    "breadcrumb": "Sail Type",
+    "questions": [
+      { "name": "Mainsail", "value": "Mainsail", "title": "sailType" },
+      { "name": "Genoa", "value": "Genoa", "title": "sailType" },
+      { "name": "Jib", "value": "Jib", "title": "sailType" },
+      { "name": "Spinnaker", "value": "Spinnaker", "title": "sailType" },
+      { "name": "Storm Jib", "value": "Storm Jib", "title": "sailType" },
+      { "name": "Code Zero", "value": "Code Zero", "title": "sailType" },
+      {
+        "name": "Genaker (Gennaker)",
+        "value": "Genaker (Gennaker)",
+        "title": "sailType"
+      },
+      { "name": "Foresail", "value": "Foresail", "title": "sailType" },
+      { "name": "Mizzensail", "value": "Mizzensail", "title": "sailType" },
+      {
+        "name": "Standard Asy Spinnaker",
+        "value": "Standard Asy Spinnaker",
+        "title": "sailType"
+      },
+      {
+        "name": "Stay Sail (Staysail)",
+        "value": "Stay Sail (Staysail)",
+        "title": "sailType"
+      },
+      {
+        "name": "I’m not sure about what type of sail",
+        "value": "",
+        "title": "sailType"
+      },
+      { "name": "See Comments", "value": "See Comments", "title": "sailType" }
+    ]
+  },
+  {
+    "title": "Select which sail types your interested in",
+    "content": "Now that we know what Sail Types your after, lets narrow it down a little.",
+    "type": "checkbox",
+    "key": "sailTypeDetail",
+    "index": 7,
+    "breadcrumb": "Sail Type Detail",
+    "questions": [
+      {
+        "name": "#1 Genoa (150%)",
+        "value": "#1 Genoa (150%)",
+        "title": "sailTypeDetail",
+        "index": 7
+      },
+      {
+        "name": "#2 Genoa (135%)",
+        "value": "#2 Genoa (135%)",
+        "title": "sailTypeDetail",
+        "index": 7
+      },
+      {
+        "name": "#3 Jib (115%)",
+        "value": "#3 Jib (115%)",
+        "title": "sailTypeDetail",
+        "index": 7
+      },
+      {
+        "name": "#4 Jib (95%)",
+        "value": "#4 Jib (95%)",
+        "title": "sailTypeDetail",
+        "index": 7
+      },
+      {
+        "name": "Main",
+        "value": "Main",
+        "title": "sailTypeDetail",
+        "index": 7
+      },
+      {
+        "name": "Furling Main (Mast)",
+        "value": "Furling Main (Mast)",
+        "title": "sailTypeDetail",
+        "index": 7
+      },
+      {
+        "name": "Furling Main (Boom)",
+        "value": "Furling Main (Boom)",
+        "title": "sailTypeDetail",
+        "index": 7
+      },
+      {
+        "name": "Mizzen",
+        "value": "Mizzen",
+        "title": "sailTypeDetail",
+        "index": 7
+      },
+      {
+        "name": "Staysail",
+        "value": "Staysail",
+        "title": "sailTypeDetail",
+        "index": 7
+      },
+      {
+        "name": "Asy Spinnaker",
+        "value": "Asy Spinnaker",
+        "title": "sailTypeDetail",
+        "index": 7
+      },
+      {
+        "name": "Standard Asy Spinnaker",
+        "value": "Standard Asy Spinnaker",
+        "title": "sailTypeDetail",
+        "index": 7
+      },
+      {
+        "name": "Asy Spinnaker A1",
+        "value": "Asy Spinnaker A1",
+        "title": "sailTypeDetail",
+        "index": 7
+      },
+      {
+        "name": "Asy Spinnaker A1.5",
+        "value": "Asy Spinnaker A1.5",
+        "title": "sailTypeDetail",
+        "index": 7
+      },
+      {
+        "name": "Asy Spinnaker A2",
+        "value": "Asy Spinnaker A2",
+        "title": "sailTypeDetail",
+        "index": 7
+      },
+      {
+        "name": "Asy Spinnaker A3",
+        "value": "Asy Spinnaker A3",
+        "title": "sailTypeDetail",
+        "index": 7
+      },
+      {
+        "name": "Asy Spinnaker A4",
+        "value": "Asy Spinnaker A4",
+        "title": "sailTypeDetail",
+        "index": 7
+      },
+      {
+        "name": "Asy Spinnaker A5",
+        "value": "Asy Spinnaker A5",
+        "title": "sailTypeDetail",
+        "index": 7
+      },
+      {
+        "name": "Asy Spinnaker Code Zero",
+        "value": "Asy Spinnaker Code Zero",
+        "title": "sailTypeDetail",
+        "index": 7
+      },
+      {
+        "name": "Sym Spinnaker",
+        "value": "Sym Spinnaker",
+        "title": "sailTypeDetail",
+        "index": 7
+      },
+      {
+        "name": "Standard Sym Spinnaker",
+        "value": "Standard Sym Spinnaker",
+        "title": "sailTypeDetail",
+        "index": 7
+      },
+      {
+        "name": "Sym Spinnaker S1",
+        "value": "Sym Spinnaker S1",
+        "title": "sailTypeDetail",
+        "index": 7
+      },
+      {
+        "name": "Sym Spinnaker S1.5",
+        "value": "Sym Spinnaker S1.5",
+        "title": "sailTypeDetail",
+        "index": 7
+      },
+      {
+        "name": "Sym Spinnaker S2",
+        "value": "Sym Spinnaker S2",
+        "title": "sailTypeDetail",
+        "index": 7
+      },
+      {
+        "name": "Sym Spinnaker S3",
+        "value": "Sym Spinnaker S3",
+        "title": "sailTypeDetail",
+        "index": 7
+      },
+      {
+        "name": "Sym Spinnaker S4",
+        "value": "Sym Spinnaker S4",
+        "title": "sailTypeDetail",
+        "index": 7
+      },
+      {
+        "name": "Sym Spinnaker S5",
+        "value": "Sym Spinnaker S5",
+        "title": "sailTypeDetail",
+        "index": 7
+      },
+      {
+        "name": "I'm not sure where I'll store it",
+        "value": "I'm not sure where I'll store it",
+        "title": "sailTypeDetail",
+        "index": 7
+      }
+    ]
+  }
+]

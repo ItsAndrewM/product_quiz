@@ -1,0 +1,143 @@
+[
+  {
+    "title": "What type of boat do you have?",
+    "content": "Choose the type of boat that best matches your vessel, as different types of boats may require different types of anchors.",
+    "type": "radio",
+    "key": "boatType",
+    "index": 1,
+    "breadcrumb": "Type",
+    "questions": [
+      { "name": "Sailboat", "value": "Sailboat", "title": "boatType" },
+      { "name": "Powerboat", "value": "Powerboat", "title": "boatType" },
+      { "name": "Fishing boat", "value": "Fishing boat", "title": "boatType" },
+      { "name": "Pontoon boat", "value": "Pontoon boat", "title": "boatType" },
+      { "name": "Kayak/canoe", "value": "Kayak/canoe", "title": "boatType" }
+    ]
+  },
+  {
+    "title": "How big is your boat?",
+    "content": "Enter the dimensions of your boat, such as length, beam, draft, and displacement, as these factors affect the size and weight of the anchor you need.",
+    "type": "input",
+    "key": "boatSize",
+    "index": 2,
+    "breadcrumb": "Size",
+    "questions": [
+      { "name": "Length (in feet)", "value": "", "title": "boatSize" },
+      { "name": "Beam (in feet)", "value": "", "title": "boatSize" },
+      { "name": "Draft (in feet)", "value": "", "title": "boatSize" },
+      { "name": "Displacement (in pounds)", "value": "", "title": "boatSize" }
+    ]
+  },
+  {
+    "title": "Where do you usually anchor?",
+    "content": "Select the type of water where you normally anchor your boat, as different water conditions may require different anchor designs and materials.",
+    "type": "radio",
+    "key": "waterType",
+    "index": 3,
+    "breadcrumb": "Water",
+    "questions": [
+      {
+        "name": "Inland waters (lakes, rivers, etc.)",
+        "value": "Inland waters",
+        "title": "waterType"
+      },
+      {
+        "name": "Coastal waters (bays, harbors, etc.)",
+        "value": "Coastal waters",
+        "title": "waterType"
+      },
+      {
+        "name": "Offshore waters (open sea, etc.)",
+        "value": "Offshore waters",
+        "title": "waterType"
+      },
+      {
+        "name": "Mixed waters (various locations)",
+        "value": "Mixed waters",
+        "title": "waterType"
+      },
+      { "name": "I don’t know", "value": "I don’t know", "title": "waterType" }
+    ]
+  },
+  {
+    "title": "What are the typical bottom conditions where you anchor?",
+    "content": "Choose the type of bottom that you usually encounter when you anchor your boat, as different bottom types may require different anchor shapes and holding power.",
+    "type": "checkbox",
+    "key": "bottomType",
+    "index": 4,
+    "breadcrumb": "Bottom",
+    "questions": [
+      { "name": "Mud", "value": "Mud", "title": "bottomType" },
+      { "name": "Sand", "value": "Sand", "title": "bottomType" },
+      { "name": "Rock", "value": "Rock", "title": "bottomType" },
+      { "name": "Grass", "value": "Grass", "title": "bottomType" },
+      { "name": "Mixed", "value": "Mixed", "title": "bottomType" }
+    ]
+  },
+  {
+    "title": "How much windage does your boat have?",
+    "content": "Estimate the amount of windage that your boat has, which is the amount of surface area that is exposed to the wind. The more windage your boat has, the more drag it will create and the more anchor scope you will need.",
+    "type": "radio",
+    "key": "windage",
+    "index": 5,
+    "breadcrumb": "Windage",
+    "questions": [
+      {
+        "name": "Low (flat or streamlined)",
+        "value": "Low",
+        "title": "windage"
+      },
+      {
+        "name": "Medium (some height or curvature)",
+        "value": "Medium",
+        "title": "windage"
+      },
+      { "name": "High (tall or wide)", "value": "High", "title": "windage" },
+      {
+        "name": "Very high (multiple masts, sails, etc.)",
+        "value": "Very high",
+        "title": "windage"
+      },
+      { "name": "I don’t know", "value": "I don’t know", "title": "windage" }
+    ]
+  },
+  {
+    "title": "How long do you usually stay at anchor?",
+    "content": "Indicate the duration of your typical anchoring sessions, as this may affect the type and size of the anchor you need. The longer you stay at anchor, the more likely you are to encounter changes in wind, tide, and current that may affect your anchor’s performance.",
+    "type": "radio",
+    "key": "anchorTime",
+    "index": 6,
+    "breadcrumb": "Time",
+    "questions": [
+      { "name": "A few hours", "value": "A few hours", "title": "anchorTime" },
+      { "name": "Overnight", "value": "Overnight", "title": "anchorTime" },
+      {
+        "name": "Several days",
+        "value": "Several days",
+        "title": "anchorTime"
+      },
+      {
+        "name": "A week or more",
+        "value": "A week or more",
+        "title": "anchorTime"
+      },
+      { "name": "I don’t know", "value": "I don’t know", "title": "anchorTime" }
+    ]
+  },
+  {
+    "title": "How much anchor rode do you have?",
+    "content": "Enter the length and type of anchor rode that you have, which is the line and chain that connects the anchor to the boat. The length of the rode affects the angle and holding power of the anchor, while the type of the rode affects the weight and durability of the system.",
+    "type": "input",
+    "key": "rode",
+    "index": 7,
+    "breadcrumb": "Rode",
+    "questions": [
+      { "name": "Length (in feet)", "value": "", "title": "rode" },
+      {
+        "name": "Type (nylon, polyester, chain, etc.)",
+        "value": "",
+        "title": "rode"
+      }
+    ]
+  }
+]

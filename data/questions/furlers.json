@@ -1,0 +1,190 @@
+[
+  {
+    "title": "What is the size and type of your boat?",
+    "content": "Different furlers are designed for different boat sizes and types, such as dinghies, sportboats, trailer sailers, or larger cruising or racing boats. You should choose a furler that matches your boat’s specifications and performance needs.",
+    "type": "radio",
+    "key": "boatSizeType",
+    "index": 1,
+    "breadcrumb": "Boat",
+    "questions": [
+      { "name": "Length (in feet)", "value": "", "title": "boatSizeType" },
+      { "name": "Beam (in feet)", "value": "", "title": "boatSizeType" },
+      { "name": "Draft (in feet)", "value": "", "title": "boatSizeType" },
+      {
+        "name": "Displacement (in pounds)",
+        "value": "",
+        "title": "boatSizeType"
+      },
+      {
+        "name": "Type (dinghy, sportboat, trailer sailer, etc.)",
+        "value": "",
+        "title": "boatSizeType"
+      }
+    ]
+  },
+  {
+    "title": "What is the length and diameter of your headstay?",
+    "content": "The headstay is the wire or rod that supports the front edge of your headsail. You should measure the length and diameter of your headstay and compare it with the furler’s specifications to ensure compatibility and proper installation.",
+    "type": "radio",
+    "key": "headstay",
+    "index": 2,
+    "breadcrumb": "Headstay",
+    "questions": [
+      { "name": "Length (in feet)", "value": "", "title": "headstay" },
+      { "name": "Diameter (in inches)", "value": "", "title": "headstay" }
+    ]
+  },
+  {
+    "title": "What kind of headsail do you have or plan to use?",
+    "content": "The headsail is the sail that is attached to the furler and rolled around the headstay. You should consider the size, shape, material, and attachment method of your headsail and how it will work with the furler. Some furlers require a special luff tape or a zipper to attach the sail, while others can use hanked-on or standard sails.",
+    "type": "checkbox",
+    "key": "headsail",
+    "index": 3,
+    "breadcrumb": "Headsail",
+    "questions": [
+      {
+        "name": "Hanked-on sail",
+        "value": "Hanked-on sail",
+        "title": "headsail"
+      },
+      {
+        "name": "Standard sail with luff tape",
+        "value": "Standard sail with luff tape",
+        "title": "headsail"
+      },
+      {
+        "name": "Sail with zipper luff",
+        "value": "Sail with zipper luff",
+        "title": "headsail"
+      },
+      {
+        "name": "Sail with UV protection",
+        "value": "Sail with UV protection",
+        "title": "headsail"
+      },
+      {
+        "name": "Sail with foam luff",
+        "value": "Sail with foam luff",
+        "title": "headsail"
+      },
+      {
+        "name": "Sail with reef points",
+        "value": "Sail with reef points",
+        "title": "headsail"
+      },
+      {
+        "name": "Sail with battens",
+        "value": "Sail with battens",
+        "title": "headsail"
+      },
+      {
+        "name": "I’m not sure about what kind of headsail",
+        "value": "",
+        "title": "headsail"
+      },
+      { "name": "See Comments", "value": "See Comments", "title": "headsail" }
+    ]
+  },
+  {
+    "title": "How often and where do you sail?",
+    "content": "The frequency and location of your sailing will affect the wear and tear of your furler and the maintenance required. You should choose a furler that is durable, reliable, and easy to maintain for your sailing conditions. Some furlers have more moving parts and require more lubrication and cleaning than others.",
+    "type": "radio",
+    "key": "sailingFrequencyLocation",
+    "index": 4,
+    "breadcrumb": "Sailing",
+    "questions": [
+      {
+        "name": "Occasionally in inland waters",
+        "value": "Occasionally in inland waters",
+        "title": "sailingFrequencyLocation"
+      },
+      {
+        "name": "Regularly in inland waters",
+        "value": "Regularly in inland waters",
+        "title": "sailingFrequencyLocation"
+      },
+      {
+        "name": "Occasionally in coastal waters",
+        "value": "Occasionally in coastal waters",
+        "title": "sailingFrequencyLocation"
+      },
+      {
+        "name": "Regularly in coastal waters",
+        "value": "Regularly in coastal waters",
+        "title": "sailingFrequencyLocation"
+      },
+      {
+        "name": "Occasionally in offshore waters",
+        "value": "Occasionally in offshore waters",
+        "title": "sailingFrequencyLocation"
+      },
+      {
+        "name": "Regularly in offshore waters",
+        "value": "Regularly in offshore waters",
+        "title": "sailingFrequencyLocation"
+      },
+      {
+        "name": "I’m not sure about how often and where I sail",
+        "value": "",
+        "title": "sailingFrequencyLocation"
+      }
+    ]
+  },
+  {
+    "title": "How do you want to control your furler?",
+    "content": "The furler is operated by a line that is wound around a drum or a spool at the base of the headstay. You should decide how you want to run and secure the furling line, whether it is to a cockpit winch, a cleat, a cam, or a ratchet. You should also consider the length and diameter of the furling line and how it will affect the ease and speed of furling.",
+    "type": "radio",
+    "key": "furlerControl",
+    "index": 5,
+    "breadcrumb": "Control",
+    "questions": [
+      {
+        "name": "Cockpit winch",
+        "value": "Cockpit winch",
+        "title": "furlerControl"
+      },
+      { "name": "Cleat", "value": "Cleat", "title": "furlerControl" },
+      { "name": "Cam", "value": "Cam", "title": "furlerControl" },
+      { "name": "Ratchet", "value": "Ratchet", "title": "furlerControl" },
+      {
+        "name": "I’m not sure about how I want to control my furler",
+        "value": "",
+        "title": "furlerControl"
+      }
+    ]
+  },
+  {
+    "title": "Do you want a flexible or a rigid furler?",
+    "content": "A flexible furler has a plastic or rubber extrusion that covers the headstay and allows the sail to be furled without a halyard. A rigid furler has an aluminum or stainless steel foil that covers the headstay and requires a separate halyard to hoist and tension the sail. A flexible furler is lighter, cheaper, and easier to install and store, but it may not be as strong or smooth as a rigid furler.",
+    "type": "radio",
+    "key": "furlerType",
+    "index": 6,
+    "breadcrumb": "Type",
+    "questions": [
+      {
+        "name": "Flexible furler",
+        "value": "Flexible furler",
+        "title": "furlerType"
+      },
+      {
+        "name": "Rigid furler",
+        "value": "Rigid furler",
+        "title": "furlerType"
+      },
+      {
+        "name": "I’m not sure about what kind of furler",
+        "value": "",
+        "title": "furlerType"
+      }
+    ]
+  },
+  {
+    "title": "Do you want a furler for your mainsail as well?",
+    "content": "A mainsail furler allows you to furl or reef your mainsail by rolling it around the mast or the boom. A mainsail furler can reduce the weight and complexity of your rigging, but it may also compromise the shape and performance of your sail. You should weigh the pros and cons of a mainsail furler and decide if it suits your sailing style and preferences.",
+    "type": "radio",
+    "key": "mainsailFurler",
+    "index": 7,
+    "breadcrumb": "Mainsail",
+    "questions": [{ "name": "Mast furler", "value": "Mast furler" }]
+  }
+]

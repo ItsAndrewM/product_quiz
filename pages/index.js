@@ -21,7 +21,7 @@ export default function Home() {
           </p>
         </div>
         <Link
-          href={"/quiz/purpose"}
+          href={"/quiz/"}
           className={`${confirmStyles.button} ${questionStyles.submit}`}
         >
           Start Quiz
