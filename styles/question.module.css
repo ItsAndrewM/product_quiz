@@ -10,6 +10,11 @@
   gap: 0.5em;
 }
 
+.list:has(input[type="textarea"]) {
+  display: flex;
+  justify-content: center;
+}
+
 .submit {
   cursor: pointer;
   text-transform: capitalize;

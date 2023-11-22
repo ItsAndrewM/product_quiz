@@ -83,7 +83,14 @@
     "type": "textarea",
     "key": "unique",
     "index": 3,
-    "breadcrumb": "Unique"
+    "breadcrumb": "Unique",
+    "questions": [
+      {
+        "value": "",
+        "name": "Tell us a little about your boat",
+        "title": "unique"
+      }
+    ]
   },
   {
     "title": "What Would You Do With New Sails?",

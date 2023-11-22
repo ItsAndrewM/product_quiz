@@ -2,30 +2,55 @@ import Layout from "@/components/ui/layout/layout";
 import Link from "next/link";
 import questionStyles from "@/styles/question.module.css";
 import confirmStyles from "@/styles/confirm.module.css";
-
+import Image from "next/image";
+import quizStyles from "@/styles/quiz.module.css";
+import { getCategoryPaths } from "@/lib/questions";
+import { getCollection } from "@/lib/swell/helpers";
 //https://www.firstlite.com/pages/firstlite-kit-finder.html?lang=en_CA
 
-export default function Home() {
+export const getServerSideProps = async (context) => {
+  const paths = await getCategoryPaths();
+  // const test = await getCollection({ handle: "anchors" });
+  return {
+    props: {
+      paths: paths || null,
+    },
+  };
+};
+
+export default function Home({ paths }) {
   return (
     <Layout>
       <div className={questionStyles.wrapper}>
         <div className={questionStyles.titleWrapper}>
-          <h1>Takacat Boat Model Finder</h1>
+          <h1>BOAT ACCESSORIES FINDER</h1>
           <p>
-            Takacat boats embody the spirit of adventure and deliver an
-            unparalleled on-water experience. With their exceptional
-            versatility, stability, comfort, durability, and user-friendly
-            design, Takacat day boats are the perfect choice for water
-            enthusiasts seeking excitement and unforgettable moments. Find
-            what&apos;s right for you.
+            Whether you need to anchor your boat, transport it on land, adjust
+            your sails, or control your furling system, we have the right
+            products for you. Find the best fit for your boat and your budget
+            with our product quiz.
           </p>
         </div>
-        <Link
-          href={"/quiz/"}
-          className={`${confirmStyles.button} ${questionStyles.submit}`}
-        >
-          Start Quiz
-        </Link>
+        <ul className={questionStyles.list}>
+          {paths.map((path) => {
+            return (
+              <li key={path} className={`${quizStyles.listItem} `}>
+                <Link href={`/quiz/${path}`} className={quizStyles.link}>
+                  <Image
+                    src={`/images/${path}.jpg`}
+                    width={200}
+                    height={200}
+                    alt={path}
+                    style={{ objectFit: "cover" }}
+                  />
+                </Link>
+                <Link href={`/quiz/${path}`} className={quizStyles.submit}>
+                  {path}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
       </div>
     </Layout>
   );

@@ -72,7 +72,7 @@ const Page = ({
     if (isValid) {
       // here you do what you need to do if is valid
       let data = Array.from(formData.keys()).reduce((acc, key) => {
-        if (path === "purpose") {
+        if (question.type === "checkbox") {
           const useCase = Array.from(formData.values());
           acc[key] = useCase;
         } else {
@@ -81,17 +81,27 @@ const Page = ({
         return acc;
       }, {});
       const query = router.query;
-      delete query.question;
-      delete query.category;
-      data = { ...query, ...data };
       if (data) {
-        router.push({
-          pathname: !nextQuestion
-            ? "/confirm"
-            : `/quiz/${categoryPath}/${nextQuestion.breadcrumb}`,
-          query: data,
-        });
-        form.reset();
+        if (!nextQuestion) {
+          delete query.question;
+          data = { ...query, ...data };
+          router.push({
+            pathname: "/confirm",
+            query: data,
+          });
+          form.reset();
+        } else {
+          delete query.question;
+          delete query.category;
+          data = { ...query, ...data };
+          router.push({
+            pathname: !nextQuestion
+              ? "/confirm"
+              : `/quiz/${categoryPath}/${nextQuestion.breadcrumb}`,
+            query: data,
+          });
+          form.reset();
+        }
       }
     } else {
       setErrors(validationMessages);
@@ -104,11 +114,12 @@ const Page = ({
     delete query.question;
     if (query) {
       router.push({
-        pathname: `/quiz/${previousQuestion.slug}`,
+        pathname: `/quiz/${categoryPath}/${previousQuestion.slug}`,
         query: query,
       });
     }
   };
+
   return (
     <Layout>
       <div className={styles.wrapper}>
@@ -120,22 +131,18 @@ const Page = ({
         <div className={styles.formWrapper}>
           <form onSubmit={handleSubmit} className={styles.form}>
             <ul className={styles.list}>
-              {!question.questions ? (
-                <textarea />
-              ) : (
-                question.questions.map((val, index) => {
-                  return (
-                    <AnswerInput
-                      key={index}
-                      name={val.name}
-                      title={val.title}
-                      type={question.type}
-                      value={val.value}
-                      defaultChecked={index === 0 ? true : false}
-                    />
-                  );
-                })
-              )}
+              {question.questions.map((val, index) => {
+                return (
+                  <AnswerInput
+                    key={index}
+                    name={val.name}
+                    title={val.title}
+                    type={question.type}
+                    value={val.value}
+                    defaultChecked={index === 0 ? true : false}
+                  />
+                );
+              })}
             </ul>
             <div className={styles.box}>
               {previousQuestion.name === "home" ? (
@@ -148,7 +155,7 @@ const Page = ({
               ) : (
                 <div>
                   <Link
-                    href={`/quiz/${previousQuestion.slug}`}
+                    href={`/quiz/${categoryPath}/${previousQuestion.slug}`}
                     onClick={handlePreviousButton}
                   >
                     back

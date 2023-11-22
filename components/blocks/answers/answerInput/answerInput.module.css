@@ -5,10 +5,76 @@
   max-height: 100px;
   max-width: 200px;
   position: absolute;
+  cursor: pointer;
   /* height: 1px;
   width: 1px; */
   opacity: 0;
   border: 1px solid black;
+}
+
+.inputWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.fillInput {
+  font-family: inherit;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border: 2px solid var(--cream);
+  outline: 0;
+  background: transparent;
+  transition: border-color 0.2s;
+  text-indent: 10px;
+}
+
+.fillInput[type="textarea"] {
+  width: 100%;
+}
+
+.fillInput:required,
+.fillInput:enabled,
+.fillInput:empty {
+  box-shadow: none;
+}
+
+.fillInput::placeholder {
+  color: transparent;
+}
+
+.fillInput:placeholder-shown ~ .fillInputLabel {
+  cursor: text;
+  top: 40px;
+}
+
+.fillInputLabel {
+  position: absolute;
+  display: block;
+  text-align: center;
+  transition: 0.2s;
+  font-size: 1rem;
+  background-color: inherit;
+  width: 100%;
+}
+
+.fillInput:focus ~ .fillInputLabel,
+.fillInput:not(:placeholder-shown) ~ .fillInputLabel {
+  position: absolute;
+  width: auto;
+  top: -8px !important;
+  left: 10px;
+  display: block;
+  transition: 0.2s;
+  font-size: 0.7rem !important;
+  font-weight: 700;
+  background-color: white;
+}
+
+.fillInput:focus,
+.fillInput:hover {
+  border: 2px solid var(--casBlue);
 }
 
 .label {
@@ -20,7 +86,6 @@
   text-transform: capitalize;
   cursor: pointer;
   text-align: center;
-  border: 1px solid white;
   transition: all 0.3s;
   border: 2px solid var(--cream);
 }
@@ -40,6 +105,13 @@
   max-width: 200px;
   height: 100px;
   max-height: 100px;
+}
+
+.listItem:has(input[type="textarea"]) {
+  width: 100% !important;
+  max-width: 100%;
+  height: 300px !important;
+  max-height: 300px;
 }
 
 /* //////////////////////////////////////////////////////////////// */
