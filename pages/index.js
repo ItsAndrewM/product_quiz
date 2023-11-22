@@ -10,7 +10,7 @@ import { getCollection } from "@/lib/swell/helpers";
 
 export const getServerSideProps = async (context) => {
   const paths = await getCategoryPaths();
-  // const test = await getCollection({ handle: "anchors" });
+
   return {
     props: {
       paths: paths || null,

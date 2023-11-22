@@ -139,5 +139,97 @@
         "title": "rode"
       }
     ]
+  },
+  {
+    "title": "What is the weight of your anchor?",
+    "content": "Enter the weight of your anchor in pounds, as this affects the holding power and the ease of handling of the anchor. The weight of the anchor should match the size and type of your boat and the water and bottom conditions.",
+    "type": "input",
+    "key": "anchorWeight",
+    "index": 8,
+    "breadcrumb": "Weight",
+    "questions": [
+      { "name": "Weight (in pounds)", "value": "", "title": "anchorWeight" }
+    ]
+  },
+  {
+    "title": "What is the shape and design of your anchor?",
+    "content": "Choose the shape and design of your anchor from the following options, as this affects the performance and suitability of the anchor for different water and bottom conditions. You can also upload a picture of your anchor if you are not sure about its name or type.",
+    "type": "radio",
+    "key": "anchorShape",
+    "index": 9,
+    "breadcrumb": "Shape",
+    "questions": [
+      {
+        "name": "Fluke anchor (Danforth, Fortress, etc.)",
+        "value": "Fluke anchor",
+        "title": "anchorShape"
+      },
+      {
+        "name": "Plow anchor (CQR, Delta, etc.)",
+        "value": "Plow anchor",
+        "title": "anchorShape"
+      },
+      {
+        "name": "Claw anchor (Bruce, Lewmar, etc.)",
+        "value": "Claw anchor",
+        "title": "anchorShape"
+      },
+      {
+        "name": "Mushroom anchor",
+        "value": "Mushroom anchor",
+        "title": "anchorShape"
+      },
+      {
+        "name": "Grapnel anchor",
+        "value": "Grapnel anchor",
+        "title": "anchorShape"
+      },
+      { "name": "Other", "value": "Other", "title": "anchorShape" },
+      {
+        "name": "Upload a picture of your anchor",
+        "value": "Upload a picture of your anchor",
+        "title": "anchorShape"
+      },
+      {
+        "name": "I don’t know",
+        "value": "I don’t know",
+        "title": "anchorShape"
+      }
+    ]
+  },
+  {
+    "title": "Do you have any accessories for your anchor?",
+    "content": "Select any accessories that you have or want for your anchor, such as a shackle, a swivel, a chain hook, a snubber, a trip line, a buoy, or a bag. These accessories can help you connect, secure, and retrieve your anchor more easily and safely.",
+    "type": "checkbox",
+    "key": "anchorAccessories",
+    "index": 10,
+    "breadcrumb": "Accessories",
+    "questions": [
+      { "name": "Shackle", "value": "Shackle", "title": "anchorAccessories" },
+      { "name": "Swivel", "value": "Swivel", "title": "anchorAccessories" },
+      {
+        "name": "Chain hook",
+        "value": "Chain hook",
+        "title": "anchorAccessories"
+      },
+      { "name": "Snubber", "value": "Snubber", "title": "anchorAccessories" },
+      {
+        "name": "Trip line",
+        "value": "Trip line",
+        "title": "anchorAccessories"
+      },
+      { "name": "Buoy", "value": "Buoy", "title": "anchorAccessories" },
+      { "name": "Bag", "value": "Bag", "title": "anchorAccessories" },
+      {
+        "name": "I don’t have or want any accessories",
+        "value": "",
+        "title": "anchorAccessories"
+      },
+      {
+        "name": "See Comments",
+        "value": "See Comments",
+        "title": "anchorAccessories"
+      }
+    ]
   }
 ]

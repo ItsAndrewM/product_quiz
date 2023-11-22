@@ -14,3 +14,9 @@
   display: flex;
   gap: 0.5em;
 }
+
+.button {
+  height: 50px;
+  padding: 0.5em;
+  text-align: center;
+}

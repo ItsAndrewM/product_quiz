@@ -2,7 +2,7 @@
   {
     "title": "What is the size and type of your boat?",
     "content": "Different furlers are designed for different boat sizes and types, such as dinghies, sportboats, trailer sailers, or larger cruising or racing boats. You should choose a furler that matches your boat’s specifications and performance needs.",
-    "type": "radio",
+    "type": "input",
     "key": "boatSizeType",
     "index": 1,
     "breadcrumb": "Boat",
@@ -25,7 +25,7 @@
   {
     "title": "What is the length and diameter of your headstay?",
     "content": "The headstay is the wire or rod that supports the front edge of your headsail. You should measure the length and diameter of your headstay and compare it with the furler’s specifications to ensure compatibility and proper installation.",
-    "type": "radio",
+    "type": "number",
     "key": "headstay",
     "index": 2,
     "breadcrumb": "Headstay",
@@ -185,6 +185,123 @@
     "key": "mainsailFurler",
     "index": 7,
     "breadcrumb": "Mainsail",
-    "questions": [{ "name": "Mast furler", "value": "Mast furler" }]
+    "questions": [
+      {
+        "name": "Mast furler",
+        "value": "Mast furler",
+        "title": "mainsailFurler"
+      },
+      {
+        "name": "Boom furler",
+        "value": "Boom furler",
+        "title": "mainsailFurler"
+      },
+      {
+        "name": "No furler",
+        "value": "No furler",
+        "title": "mainsailFurler"
+      },
+      {
+        "name": "I'm not sure about what kind of mainsail furler",
+        "value": "",
+        "title": "mainsailFurler"
+      }
+    ]
+  },
+  {
+    "title": "What is your budget for a furler?",
+    "content": "The price of a furler can vary depending on the quality, features, and brand of the product. You should have a realistic budget for a furler that matches your sailing goals and expectations. You should also factor in the installation and maintenance costs of the furler.",
+    "type": "number",
+    "key": "furlerBudget",
+    "index": 8,
+    "breadcrumb": "Budget",
+    "questions": [
+      {
+        "name": "Minimum budget (in dollars)",
+        "value": "",
+        "title": "furlerBudget"
+      },
+      {
+        "name": "Maximum budget (in dollars)",
+        "value": "",
+        "title": "furlerBudget"
+      }
+    ]
+  },
+  {
+    "title": "Do you have any specific brand preferences for a furler?",
+    "content": "There are many different brands of furlers available in the market, such as Harken, Profurl, Furlex, Schaefer, Selden, etc. You may have a preference for a certain brand based on your previous experience, reputation, or recommendation. You should choose a furler that meets your quality standards and customer service expectations.",
+    "type": "checkbox",
+    "key": "furlerBrand",
+    "index": 9,
+    "breadcrumb": "Brand",
+    "questions": [
+      { "name": "Harken", "value": "Harken", "title": "furlerBrand" },
+      { "name": "Profurl", "value": "Profurl", "title": "furlerBrand" },
+      { "name": "Furlex", "value": "Furlex", "title": "furlerBrand" },
+      { "name": "Schaefer", "value": "Schaefer", "title": "furlerBrand" },
+      { "name": "Selden", "value": "Selden", "title": "furlerBrand" },
+      { "name": "Other", "value": "Other", "title": "furlerBrand" },
+      {
+        "name": "I don’t have any specific brand preferences",
+        "value": "",
+        "title": "furlerBrand"
+      }
+    ]
+  },
+  {
+    "title": "Do you have any special features or requirements for a furler?",
+    "content": "Some furlers may have additional features or options that can enhance your sailing experience, such as a swivel lock, a quick release, a reefing indicator, a remote control, etc. You may also have some special requirements for a furler, such as compatibility with a bowsprit, a gennaker, a code zero, etc. You should choose a furler that can accommodate your sailing needs and preferences.",
+    "type": "checkbox",
+    "key": "furlerFeatures",
+    "index": 10,
+    "breadcrumb": "Features",
+    "questions": [
+      {
+        "name": "Swivel lock",
+        "value": "Swivel lock",
+        "title": "furlerFeatures"
+      },
+      {
+        "name": "Quick release",
+        "value": "Quick release",
+        "title": "furlerFeatures"
+      },
+      {
+        "name": "Reefing indicator",
+        "value": "Reefing indicator",
+        "title": "furlerFeatures"
+      },
+      {
+        "name": "Remote control",
+        "value": "Remote control",
+        "title": "furlerFeatures"
+      },
+      {
+        "name": "Bowsprit compatibility",
+        "value": "Bowsprit compatibility",
+        "title": "furlerFeatures"
+      },
+      {
+        "name": "Gennaker compatibility",
+        "value": "Gennaker compatibility",
+        "title": "furlerFeatures"
+      },
+      {
+        "name": "Code zero compatibility",
+        "value": "Code zero compatibility",
+        "title": "furlerFeatures"
+      },
+      {
+        "name": "I don’t have any special features or requirements",
+        "value": "",
+        "title": "furlerFeatures"
+      },
+      {
+        "name": "See Comments",
+        "value": "See Comments",
+        "title": "furlerFeatures"
+      }
+    ]
   }
 ]

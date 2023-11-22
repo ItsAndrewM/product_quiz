@@ -323,5 +323,65 @@
         "title": "storage"
       }
     ]
+  },
+  {
+    "title": "What color do you prefer for your Takacat?",
+    "content": "Choose from a variety of colors for your Takacat inflatable dinghy, such as red, blue, green, yellow, or gray. You can also mix and match the colors for the tubes and the floor.",
+    "type": "checkbox",
+    "key": "color",
+    "breadcrumb": "color",
+    "index": 8,
+    "questions": [
+      { "name": "Red", "value": "Red", "title": "color" },
+      { "name": "Blue", "value": "Blue", "title": "color" },
+      { "name": "Green", "value": "Green", "title": "color" },
+      { "name": "Yellow", "value": "Yellow", "title": "color" },
+      { "name": "Gray", "value": "Gray", "title": "color" },
+      { "name": "Mix and match", "value": "Mix and match", "title": "color" },
+      {
+        "name": "I don’t have a color preference",
+        "value": "",
+        "title": "color"
+      }
+    ]
+  },
+  {
+    "title": "Do you want any accessories for your Takacat?",
+    "content": "Enhance your Takacat inflatable dinghy with some optional accessories, such as a bimini top, a bow bag, a rod holder, a seat cushion, a transom wheel, or a repair kit. You can also customize your Takacat with your name, logo, or graphics.",
+    "type": "checkbox",
+    "key": "accessories",
+    "breadcrumb": "accessories",
+    "index": 9,
+    "questions": [
+      { "name": "Bimini top", "value": "Bimini top", "title": "accessories" },
+      { "name": "Bow bag", "value": "Bow bag", "title": "accessories" },
+      { "name": "Rod holder", "value": "Rod holder", "title": "accessories" },
+      {
+        "name": "Seat cushion",
+        "value": "Seat cushion",
+        "title": "accessories"
+      },
+      {
+        "name": "Transom wheel",
+        "value": "Transom wheel",
+        "title": "accessories"
+      },
+      { "name": "Repair kit", "value": "Repair kit", "title": "accessories" },
+      {
+        "name": "Customization",
+        "value": "Customization",
+        "title": "accessories"
+      },
+      {
+        "name": "I don’t want any accessories",
+        "value": "",
+        "title": "accessories"
+      },
+      {
+        "name": "See Comments",
+        "value": "See Comments",
+        "title": "accessories"
+      }
+    ]
   }
 ]

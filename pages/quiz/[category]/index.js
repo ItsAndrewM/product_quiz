@@ -1,3 +1,4 @@
+import CircularProgress from "@/components/blocks/circularProgress/circularProgress";
 import Layout from "@/components/ui/layout/layout";
 import { getCategoryPaths, getQuestionData } from "@/lib/questions";
 import { useRouter } from "next/router";
@@ -27,7 +28,11 @@ const Page = ({ data, category }) => {
     router.push(`/quiz/${category}/${data[0].breadcrumb}`);
   }, []);
 
-  return <Layout>This is the catagory page for {category}</Layout>;
+  return (
+    <Layout>
+      <CircularProgress />
+    </Layout>
+  );
 };
 
 export default Page;

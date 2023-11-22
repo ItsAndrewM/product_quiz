@@ -1,7 +1,6 @@
 import AnswerInput from "@/components/blocks/answers/answerInput/answerInput";
 import Layout from "@/components/ui/layout/layout";
 import { breadcrumbs } from "@/data/breadcrumbs/breadcrumbs";
-import { questions } from "@/data/questions/dinghys";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
@@ -114,7 +113,7 @@ const Page = ({
     delete query.question;
     if (query) {
       router.push({
-        pathname: `/quiz/${categoryPath}/${previousQuestion.slug}`,
+        pathname: `/quiz/${categoryPath}/${previousQuestion.breadcrumb}`,
         query: query,
       });
     }
@@ -127,6 +126,7 @@ const Page = ({
         <div className={styles.titleWrapper}>
           <h1>{path}</h1>
           <p>{question.title}</p>
+          <p>{question.content}</p>
         </div>
         <div className={styles.formWrapper}>
           <form onSubmit={handleSubmit} className={styles.form}>

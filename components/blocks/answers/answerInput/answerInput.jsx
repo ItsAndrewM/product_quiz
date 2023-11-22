@@ -14,6 +14,7 @@ const AnswerInput = ({ type, name, value, title, defaultChecked }) => {
             placeholder={name}
             required
             className={styles.fillInput}
+            min={0}
           />
           <label
             htmlFor={`${title}.${name}`}
