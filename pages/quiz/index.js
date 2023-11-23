@@ -1,10 +1,8 @@
 import Layout from "@/components/ui/layout/layout";
 import { getCategoryPaths } from "@/lib/questions";
-import breadCrumbStyles from "@/components/ui/navigation/breadcrumbs/breadcrumbs.module.css";
 import questionStyles from "@/styles/question.module.css";
 import styles from "@/styles/quiz.module.css";
-import Link from "next/link";
-import Image from "next/image";
+import CategoryGrid from "@/components/blocks/categoryGrid/categoryGrid";
 
 export const getServerSideProps = async (context) => {
   const paths = await getCategoryPaths();
@@ -26,26 +24,7 @@ const Page = ({ paths }) => {
             looking for?
           </p>
         </div>
-        <ul className={questionStyles.list}>
-          {paths.map((path) => {
-            return (
-              <li key={path} className={`${styles.listItem} `}>
-                <Link href={`/quiz/${path}`} className={styles.link}>
-                  <Image
-                    src={`/images/${path}.jpg`}
-                    width={200}
-                    height={200}
-                    alt={path}
-                    style={{ objectFit: "cover" }}
-                  />
-                </Link>
-                <Link href={`/quiz/${path}`} className={styles.submit}>
-                  {path}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
+        <CategoryGrid paths={paths} />
       </div>
     </Layout>
   );

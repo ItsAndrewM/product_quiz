@@ -4,7 +4,7 @@ import styles from "./breadcrumbs.module.css";
 import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
 import BreadcrumbItem from "../breadcrumbItem/breadcrumbItem";
-const Breadcrumbs = ({ breadcrumbs }) => {
+const Breadcrumbs = ({ breadcrumbs, path }) => {
   const router = useRouter();
   const ref = useRef();
   const [urlQuery, setUrlQuery] = useState(router.query);
@@ -34,7 +34,12 @@ const Breadcrumbs = ({ breadcrumbs }) => {
       <ul className={styles.list} ref={ref}>
         {breadcrumbs.map((crumb, index) => {
           return (
-            <BreadcrumbItem key={index} crumb={crumb} urlQuery={urlQuery} />
+            <BreadcrumbItem
+              key={index}
+              crumb={crumb}
+              urlQuery={urlQuery}
+              path={path}
+            />
           );
         })}
         <li className={styles.listItem} key={"confirm"}>
@@ -42,7 +47,7 @@ const Breadcrumbs = ({ breadcrumbs }) => {
             href={{ pathname: "/confirm", query: urlQuery }}
             className={router.asPath.includes("confirm") ? styles.active : ""}
           >
-            {"confirm"}
+            confirm
           </Link>
         </li>
       </ul>

@@ -37,6 +37,7 @@ export const getStaticProps = async ({ params }) => {
   );
   return {
     props: {
+      allQuestionData: allQuestionData || null,
       question: data || null,
       path: params.question || null,
       categoryPath: params.category || null,
@@ -47,6 +48,7 @@ export const getStaticProps = async ({ params }) => {
 };
 
 const Page = ({
+  allQuestionData,
   path,
   question,
   nextQuestion,
@@ -122,7 +124,7 @@ const Page = ({
   return (
     <Layout>
       <div className={styles.wrapper}>
-        {/* <Breadcrumbs breadcrumbs={} */}
+        <Breadcrumbs breadcrumbs={allQuestionData} path={path} />
         <div className={styles.titleWrapper}>
           <h1>{path}</h1>
           <p>{question.title}</p>

@@ -2,20 +2,21 @@ import Link from "next/link";
 import styles from "../breadcrumbs/breadcrumbs.module.css";
 import { useRouter } from "next/router";
 
-const BreadcrumbItem = ({ crumb, urlQuery }) => {
+const BreadcrumbItem = ({ crumb, urlQuery, path }) => {
   const router = useRouter();
 
   return (
     <li className={styles.listItem} key={crumb.breadcrumb}>
       <Link
-        href={{ pathname: `/quiz/${crumb.breadcrumb}`, query: urlQuery }}
+        href={{
+          pathname: `/quiz/${path}/${crumb.breadcrumb}`,
+          query: urlQuery,
+        }}
         className={
-          router.asPath.includes(`/quiz/${crumb.breadcrumb}`)
-            ? styles.active
-            : ""
+          router.asPath.includes(`/${crumb.breadcrumb}`) ? styles.active : ""
         }
       >
-        {crumb.name}
+        {crumb.breadcrumb}
       </Link>
       <span className={`${styles.right} ${styles.chevron}`}></span>
     </li>

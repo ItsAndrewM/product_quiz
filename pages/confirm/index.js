@@ -5,15 +5,25 @@ import styles from "@/styles/confirm.module.css";
 import quizStyles from "@/styles/quiz.module.css";
 import { getQuestionData } from "@/lib/questions";
 import ConfirmedInput from "@/components/blocks/confirm/confirmedInput/confirmedInput";
-import { findBestMatches, getCollection } from "@/lib/swell/helpers";
+import {
+  findBestMatches,
+  getCategoryAccessories,
+  getCollection,
+} from "@/lib/swell/helpers";
 import CircularProgress from "@/components/blocks/circularProgress/circularProgress";
 import Image from "next/image";
+import ProductGrid from "@/components/blocks/productGrid/productGrid";
 export const getServerSideProps = async (context) => {
   const questions = await getQuestionData(context.query.category);
   const collection = await getCollection({ handle: context.query.category });
   // console.log(collection.products);
   // Call the function to find the best matches for the customer’s answers
   const bestMatches = findBestMatches(collection.products, context.query);
+  const accessories = await getCategoryAccessories({
+    handle: context.query.category,
+  });
+
+  console.log(accessories.products.length);
 
   // Print the best matches to the console
 
@@ -23,11 +33,12 @@ export const getServerSideProps = async (context) => {
       questions: questions || null,
       collection: collection || null,
       bestMatches: bestMatches || null,
+      accessories: accessories.products || null,
     },
   };
 };
 
-const Page = ({ data, questions, collection, bestMatches }) => {
+const Page = ({ data, questions, collection, bestMatches, accessories }) => {
   if (!data && !questions && !collection && !bestMatches) {
     return (
       <Layout>
@@ -69,70 +80,23 @@ const Page = ({ data, questions, collection, bestMatches }) => {
                 for
               </p>
             </div>
-            <ul className={questionStyles.list}>
-              {bestMatches.map((product) => {
-                console.log(product);
-                return (
-                  <li key={product.id} className={`${quizStyles.listItem} `}>
-                    <Link
-                      href={`${process.env.NEXT_PUBLIC_SITE_URL}/products/${product.slug}`}
-                      className={quizStyles.link}
-                    >
-                      <Image
-                        src={
-                          !product.images
-                            ? `https://placehold.co/${200}x${200}/jpeg`
-                            : product.images[0].file.url
-                        }
-                        width={200}
-                        height={200}
-                        alt={product.name}
-                        style={{ objectFit: "cover" }}
-                      />
-                    </Link>
-                    <Link
-                      href={`${process.env.NEXT_PUBLIC_SITE_URL}/products/${product.slug}`}
-                      className={quizStyles.submit}
-                    >
-                      {product.name}
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
+            <ProductGrid products={bestMatches} />
           </>
         ) : (
-          <ul className={questionStyles.list}>
-            {bestMatches.map((product) => {
-              console.log(product);
-              return (
-                <li key={product.id} className={`${quizStyles.listItem} `}>
-                  <Link
-                    href={`${process.env.NEXT_PUBLIC_SITE_URL}/products/${product.slug}`}
-                    className={quizStyles.link}
-                  >
-                    <Image
-                      src={
-                        !product.images.length
-                          ? `https://placehold.co/${200}x${200}/jpeg`
-                          : product.images[0].file.url
-                      }
-                      width={200}
-                      height={200}
-                      alt={product.name}
-                      style={{ objectFit: "cover" }}
-                    />
-                  </Link>
-                  <Link
-                    href={`${process.env.NEXT_PUBLIC_SITE_URL}/products/${product.slug}`}
-                    className={`${styles.button} ${quizStyles.submit}`}
-                  >
-                    {product.name}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
+          <>
+            <ProductGrid products={bestMatches} />
+          </>
+        )}
+        {!accessories.length ? (
+          <></>
+        ) : (
+          <>
+            {" "}
+            <h1>
+              Check out these accessories for any of your {data.category} needs
+            </h1>
+            <ProductGrid products={accessories} />
+          </>
         )}
 
         <div className={questionStyles.box}>
