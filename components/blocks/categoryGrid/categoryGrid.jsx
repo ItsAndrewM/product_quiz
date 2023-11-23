@@ -1,5 +1,6 @@
 import styles from "@/styles/quiz.module.css";
 import questionStyles from "@/styles/question.module.css";
+
 const CategoryGrid = ({ paths }) => {
   return (
     <ul className={questionStyles.list}>

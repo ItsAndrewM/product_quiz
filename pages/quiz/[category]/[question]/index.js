@@ -1,6 +1,5 @@
 import AnswerInput from "@/components/blocks/answers/answerInput/answerInput";
 import Layout from "@/components/ui/layout/layout";
-import { breadcrumbs } from "@/data/breadcrumbs/breadcrumbs";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";

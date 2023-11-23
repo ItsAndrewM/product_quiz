@@ -1,6 +1,5 @@
 import Link from "next/link";
 import styles from "./breadcrumbs.module.css";
-// import { breadcrumbs } from "@/data/breadcrumbs/breadcrumbs";
 import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
 import BreadcrumbItem from "../breadcrumbItem/breadcrumbItem";
